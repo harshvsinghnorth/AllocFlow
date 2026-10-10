@@ -1,0 +1,30 @@
+# PostgreSQL for running AllocFlow against a real server rather than the
+# embedded PGlite default.
+#
+#   docker compose up -d
+#   # then set in server/.env:
+#   DATABASE_URL=postgresql://allocflow:allocflow@localhost:5432/allocflow
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: allocflow-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: allocflow
+      POSTGRES_PASSWORD: allocflow
+      POSTGRES_DB: allocflow
+    ports:
+      - '5432:5432'
+    volumes:
+      - allocflow-pgdata:/var/lib/postgresql/data
+    healthcheck:
+      # The API fails fast if it cannot connect, so hold the container
+      # "starting" until Postgres actually accepts connections.
+      test: ['CMD-SHELL', 'pg_isready -U allocflow -d allocflow']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  allocflow-pgdata:

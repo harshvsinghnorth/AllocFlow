@@ -1,0 +1,19 @@
+node_modules/
+dist/
+build/
+.DS_Store
+
+# Local environment and secrets
+.env
+.env.local
+server/.env
+
+# Embedded PGlite data directory
+server/data/
+
+*.log
+npm-debug.log*
+.vite/
+*.tsbuildinfo
+.idea/
+.vscode/
