@@ -8,6 +8,13 @@ block, book a bed, raise housekeeping and repair requests, request gatepasses,
 track electricity bills and read notices. Wardens, supervisors, security and
 mess staff each get a dashboard scoped to what their role is allowed to do.
 
+![Hostel Explorer: pick a block and browse its 3D model with live bed availability](docs/screenshots/hostel-explorer.png)
+
+| Floor drill-down | Gatepass | Housekeeping & repairs |
+| :-: | :-: | :-: |
+| ![Floor 12 of BSH opened in 3D, with every room's free beds](docs/screenshots/floor-drilldown.png) | ![A student's approved gatepass with the code shown at the gate](docs/screenshots/gatepass.png) | ![Housekeeping and repair tickets with live status](docs/screenshots/housekeeping.png) |
+| Open a floor to see each room's free beds. Green has more than one free, yellow has exactly one. | Students request a gatepass, the warden approves it, and security verifies the code at the gate. | One-tap requests, auto-filled with the student's hostel and room. |
+
 ---
 
 ## Quick start
